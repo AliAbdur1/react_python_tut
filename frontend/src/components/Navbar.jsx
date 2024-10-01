@@ -4,7 +4,7 @@ import { IoMoon } from "react-icons/io5"
 import { LuSun } from "react-icons/lu"
 import CreateUserModal from './CreateUserModal'
 // Box Flex Text are components coming from chakra
-const Navbar = () => {
+const Navbar = ({setUsers}) => {
     const { colorMode, toggleColorMode } = useColorMode();
   return (
   <Container maxW={"900px"}>
@@ -32,7 +32,7 @@ const Navbar = () => {
                     {/* Iomon and LuSun are imported using npm i react-icons */}
                     {colorMode === "light" ? <IoMoon /> : <LuSun size={20}/>}  
                 </Button>
-                <CreateUserModal></CreateUserModal>
+                <CreateUserModal setUsers={setUsers}></CreateUserModal>
             </Flex>
         </Flex>
     </Box>
